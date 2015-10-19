@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sae.const
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -88,6 +89,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'liveAtitude.urls'
 
+STATIC_URL = '/static/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -110,10 +113,25 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+if 'SERVER_SOFTWARE' in os.environ:
+     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+
+else:
+    MYSQL_HOST = 'localhost'
+    MYSQL_PORT = '3306'
+    MYSQL_USER = 'root'
+    MYSQL_PASS = '******'
+    MYSQL_DB = 'YOUR_DATABASE_NAME'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': MYSQL_DB,
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_PASS,
+        'HOST': MYSQL_HOST,
+        'PORT': MYSQL_PORT
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
