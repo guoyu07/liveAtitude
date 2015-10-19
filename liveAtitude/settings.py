@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'iryy4%mxqgu(_x*%%su-+gadzz2+#l9cn437$kc*!s2*mu2qn!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 
 ALLOWED_HOSTS = []
 
@@ -125,13 +125,14 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
-
+    DEBUG = False
 else:
     MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
     MYSQL_PASS = '185313'
     MYSQL_DB = 'live_set'
+    DEBUG = True
 
 DATABASES = {
     'default': {
