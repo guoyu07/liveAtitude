@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import sae.const
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    # 'live_set',
 )
 
 from django.conf import global_settings
@@ -114,14 +115,15 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 if 'SERVER_SOFTWARE' in os.environ:
-     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+    import sae.const
+    from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
 
 else:
     MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
-    MYSQL_PASS = '******'
-    MYSQL_DB = 'YOUR_DATABASE_NAME'
+    MYSQL_PASS = '185313'
+    MYSQL_DB = 'live_set'
 
 DATABASES = {
     'default': {
