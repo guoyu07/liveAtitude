@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+# from django.shortcuts import render, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from blog.models import Article
 from django.http import Http404
@@ -7,8 +7,8 @@ from django.http import Http404
 def home(request):
     post_list = Article.objects.all()
     html = '<p>hello world</p>'
-    # return render_to_response('home.html', locals())
-    return HttpResponse(html)
+    return render_to_response('home.html', locals())
+
 
 def detail(request, id):
     try:
