@@ -3,5 +3,5 @@ libraries:
   version: "1.8.3"
 
 handlers:
-- url:/static
+- url: /static
   static_path: ./
