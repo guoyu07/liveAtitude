@@ -124,39 +124,31 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
-    from sae.const import SAE_MYSQL_HOST_M, SAE_MYSQL_PORT, SAE_MYSQL_USER, SAE_MYSQL_PASS, SAE_MYSQL_DB
-    DATABASES = {
-            'default': {
-                'ENGINE': 'django.db.backends.mysql',
-                'NAME': SAE_MYSQL_DB,
-                'USER': SAE_MYSQL_USER,
-                'PASSWORD': SAE_MYSQL_PASS,
-                'HOST': SAE_MYSQL_HOST_M,
-                'PORT': SAE_MYSQL_PORT
-                # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-            }
-        }
+    from sae.const import MYSQL_HOST_M, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+    from sae._restful_mysql import monkey
+    monkey.patch()
 
-    DEBUG = True
+    DEBUG = False
 else:
     MYSQL_HOST_M = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
-    MYSQL_PASS = '185313'
-    MYSQL_DB = 'live_set'
+    MYSQL_PASS = '.....'
+    MYSQL_DB = 'app_liveatitule'
     DEBUG = True
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': MYSQL_DB,
-            'USER': MYSQL_USER,
-            'PASSWORD': MYSQL_PASS,
-            'HOST': MYSQL_HOST_M,
-            'PORT': MYSQL_PORT
-            # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': MYSQL_DB,
+        'USER': MYSQL_USER,
+        'PASSWORD': MYSQL_PASS,
+        'HOST': MYSQL_HOST_M,
+        'PORT': MYSQL_PORT
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
 
 
 # Internationalization
