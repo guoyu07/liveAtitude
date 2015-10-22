@@ -125,18 +125,19 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-DEBUG = False
 
+# sae环境下进行的配置，动态识别是本地环境还是sae环境
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
+    DEBUG = False
 else:
     MYSQL_HOST_M = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
-    MYSQL_PASS = '.....'
+    MYSQL_PASS = '.....'# 本地环境下配置数据库账号密码
     MYSQL_DB = 'app_liveatitule'
-
+    DEBUG = True
 
 DATABASES = {
     'default': {
