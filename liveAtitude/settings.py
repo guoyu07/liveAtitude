@@ -126,7 +126,7 @@ if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
 
-    DEBUG = False
+    DEBUG = True
 else:
     MYSQL_HOST_M = 'localhost'
     MYSQL_PORT = '3306'
