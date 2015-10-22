@@ -124,9 +124,7 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
-    from sae.const import MYSQL_HOST_M, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
-    from sae._restful_mysql import monkey
-    monkey.patch()
+    from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
 
     DEBUG = False
 else:
@@ -143,7 +141,7 @@ DATABASES = {
         'NAME': MYSQL_DB,
         'USER': MYSQL_USER,
         'PASSWORD': MYSQL_PASS,
-        'HOST': MYSQL_HOST_M,
+        'HOST': MYSQL_HOST,
         'PORT': MYSQL_PORT
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
