@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 import blog
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
     url(r'', include('blog.urls')),
 ]
+urlpatterns += staticfiles_urlpatterns()
