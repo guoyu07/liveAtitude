@@ -7,8 +7,8 @@ from django.http import Http404
 def home(request):
     post_list = Article.objects.all()
     html = '<p>hello world</p>'
-    # return render_to_response('home.html', locals())
-    return HttpResponse(html)
+    return render_to_response('home.html', {"post_list": post_list})
+    # return HttpResponse(html)
 
 
 def detail(request, id):
