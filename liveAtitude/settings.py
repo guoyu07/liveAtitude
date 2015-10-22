@@ -28,7 +28,7 @@ SECRET_KEY = 'iryy4%mxqgu(_x*%%su-+gadzz2+#l9cn437$kc*!s2*mu2qn!'
 
 
 ALLOWED_HOSTS = [
-    '.lqczzz.com'
+    '.lqczzz.cc',
     '.sinaapp.com',
     '1.liveatitude.sinaapp.com'
 ]
