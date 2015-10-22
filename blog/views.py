@@ -8,7 +8,7 @@ def home(request):
     post_list = Article.objects.all()
     html = '<p>hello world</p>'
     # return render_to_response('home.html', locals())
-    return HttpResponse(request, html)
+    return HttpResponse(html)
 
 
 def detail(request, id):
