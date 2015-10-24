@@ -132,10 +132,10 @@ if 'SERVER_SOFTWARE' in os.environ:
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
     DEBUG = False
 else:
-    MYSQL_HOST_M = 'localhost'
+    MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
-    MYSQL_PASS = '.....'# 本地环境下配置数据库账号密码
+    MYSQL_PASS = '185313'# 本地环境下配置数据库账号密码
     MYSQL_DB = 'app_liveatitule'
     DEBUG = True
 
