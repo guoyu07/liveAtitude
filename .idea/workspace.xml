@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d80cfb33-1605-4cbc-a76b-151bb185c045" name="Default" comment="UI add&amp;&amp;override the view with class">
+    <list default="true" id="d80cfb33-1605-4cbc-a76b-151bb185c045" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="liveAtitude.iws" />
@@ -630,7 +630,13 @@
       <option name="project" value="LOCAL" />
       <updated>1445692469563</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="UI add&amp;&amp;override the view with class">
+      <created>1445692586582</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1445692586582</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
