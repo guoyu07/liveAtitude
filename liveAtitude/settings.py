@@ -135,7 +135,7 @@ else:
     MYSQL_HOST = 'localhost'
     MYSQL_PORT = '3306'
     MYSQL_USER = 'root'
-    MYSQL_PASS = '185313'# 本地环境下配置数据库账号密码
+    MYSQL_PASS = '.....'# 本地环境下配置数据库账号密码
     MYSQL_DB = 'app_liveatitule'
     DEBUG = True
 
