@@ -127,6 +127,7 @@ WSGI_APPLICATION = 'liveAtitude.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 # sae环境下进行的配置，动态识别是本地环境还是sae环境
+
 if 'SERVER_SOFTWARE' in os.environ:
     import sae.const
     from sae.const import MYSQL_HOST, MYSQL_PORT, MYSQL_USER, MYSQL_PASS, MYSQL_DB
