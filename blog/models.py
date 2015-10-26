@@ -30,3 +30,24 @@ class Article(models.Model):
         ordering = ['-date_time']
         app_label = string_with_title('blog', u'博客管理')
 
+class Nav(models.Model):
+    name = models.CharField(max_length=40, verbose_name=u'导航内容')
+    url = models.CharField(max_length=100, blank=True, null=True, verbose_name=u'指向地址')
+
+    class Meta:
+        verbose_name_plural = verbose_name = u'右边栏'
+        ordering = ['-name']
+        app_label = string_with_title('blog', u'博客导航')
+
+
+class Footer(models.Model):
+    name = models.CharField(max_length=40, verbose_name=u'站脚')
+    url = models.CharField(max_length=100, verbose_name=u'指向地址')
+
+    class Meta:
+        verbose_name_plural = verbose_name = u'站脚'
+        ordering = ['-name']
+        app_label = string_with_title('blog', u'网站信息')
+
+
+
